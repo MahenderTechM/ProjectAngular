@@ -1,0 +1,19 @@
+<!-- <p *ngFor="let item of m_userData">{{item.name}}</p> -->
+<input class="form-control people-picker" type="text" [(ngModel)]='m_userName' name='name'  
+(keyup)="onKeyUp($event)" #ppInput/>
+<div class="col-sm-6 alignUsers" *ngIf="displaySuggestion !==false"  #ppListItem>
+    <ul class="list-group">
+        <li class="list-group-item"  (click)='selectedUser(user)' *ngFor="let user of filteredUserList;let i=index">
+            <a>
+                <fa-icon [icon]="faUserCircle"></fa-icon> {{user["displayName"]}}
+            </a>
+        </li>
+    </ul>    
+</div>
+<div class="chip-holder" *ngIf="m_selectedUserList.length>0">
+    <ul class="chip-group">
+        <li class="chip-group-item" *ngFor="let user of m_selectedUserList;let i=index">
+            <span>{{user.displayName}}</span><a (click) = "removeSelectedUser(i)"><fa-icon [icon]="faTimesCircle"></fa-icon></a>
+        </li>
+    </ul>
+</div>

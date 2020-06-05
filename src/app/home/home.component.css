@@ -1,0 +1,130 @@
+@import url("../../assets/css/bootstrap.css");
+/* @import url("../../assets/css/cvdp3.css"); */
+
+
+.header{
+    background: url('../../assets/images/back-wafer.jpg');
+    min-height:190px;
+    position: relative;
+    margin-bottom: 15px;
+    box-shadow: 0px .5px 15px #333;
+
+}
+
+.headerUnder {
+width: 80%;
+height: 15px; 
+position: absolute;
+bottom:  -15px;
+left: 0px;
+}
+.welcome-text{
+    color:white;
+    font-size: 45px;
+    position:relative;
+    bottom:0;
+    left:0;
+    padding: 0px 0px 5px 6%;
+    margin:0px;
+    background:#4d85a488;
+    width:94%;
+    text-transform: uppercase;
+}
+.content{
+    margin-top:20px;
+}
+.box{
+    padding:15px 20px;
+    margin-bottom:10px;
+}
+
+.box-sm{
+    height:200px;
+}
+
+.box-lg{
+    height:410px;
+}
+.box-green{
+    background-color: #96ca50;
+}
+
+.box-orange{
+    background-color: #e87722;
+}
+.box-dark{
+    background-color: #6d6e71;
+}
+.box .title{
+    color:white;
+    font-size:20px;
+    margin: 0px;
+}
+.box-btn{
+    background-color:#16c0e8;
+    display: inline-block;
+    color:white;
+    border:none;
+    padding:12px 28px;
+    margin: 0px;
+    box-shadow: 2px 2.5px 5px #444;
+    margin-top: 5px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+    .box-btn:hover{
+        opacity: .9;
+    box-shadow: 1px .5px 1px #444;
+    }
+
+.box .box-lst{
+    color: #ffffffcc;
+    padding-left: 15px;
+    margin-top: 19px;
+}
+
+
+.box .box-lst li{
+    margin-bottom:10px;
+}
+
+.box  .st-no{			
+    list-style: none;
+    padding: 0px;
+}
+
+.db-panel{
+    border-color:#4e9fba; 
+    border-radius: 0px;
+    height:410px;
+}
+.db-panel .panel-heading{
+    margin:0px;
+    color:rgb(20, 7, 7);
+    font-size: x-large;
+    background-color:#0d819b; 
+}
+
+.pie-chart-container{
+    width:100%;
+}
+
+
+.white-links A {
+color: #ffffff;	
+text-decoration: none;
+}
+.white-links A:hover {
+opacity:.8;
+text-decoration: underline
+}
+
+.max100 {
+max-width: 100%;	
+}
+
+@media (max-width: 1260px) {
+.container {
+width: 100% !important;
+}
+}

@@ -1,0 +1,9 @@
+<ng-multiselect-dropdown
+  [placeholder]="'Select  Customer'"
+  [data]="data"
+  [(ngModel)]="selectedItems"
+  [settings]="dropdownSettings"
+  (onSelect)="onItemSelect($event)"
+  (onSelectAll)="onSelectAll($event)"
+>
+</ng-multiselect-dropdown>

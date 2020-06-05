@@ -1,0 +1,41 @@
+
+<div class="row no-margin">
+    <div class="col-xs-12 no-padding">
+        </div>
+        <div class="col-xs-12 no-padding cvdp3_tabs">
+                <ul class="nav nav-tabs">
+            <li>
+              <div class="search_control_links">
+                  <input type="text" class="search_box"  value="Search..." onblur="if(value=='') value = 'Search...'" onfocus="if(value=='Search...') value = ''"><img src="./assets/images/icon-search15.png" class="search_img" title="Search">
+              </div>
+            </li>
+            <li>
+            </li>   
+            <li style="margin-left: 80%">
+            <div class="actionIcons">
+            <a href="#"><img src="./assets/images/icon-xls.png" width="40" height="33" alt="Export to Excel"></a>
+            <a href="#"><img src="./assets/images/icon-save.png" width="40" height="33" alt="Save"  type="button" (click)="save()"></a>
+            </div>
+            </li>            
+          </ul> 
+
+          <ag-grid-angular
+          style="width: 100%; height: 46vh;"
+          class="ag-theme-balham"
+          [gridOptions]="gridOptions"
+          [modules]="modules"
+          [columnDefs]="columnDefs"
+          [rowData]="rowData"
+          [dateComponent]="'dateComponent'"
+          [pagination]="true"
+          [paginationPageSize]="8"
+          (cellClicked)="onCellClicked($event)"
+          [columnDefs]="columnDefs"
+          [sideBar]="sideBar"
+          [getRowHeight]="getRowHeight"
+          (gridReady)="onGridReady($event)"
+          [defaultColDef]="defaultColDef"
+          (firstDataRendered)="onFirstDataRendered($event)"
+        
+          >
+        </ag-grid-angular>

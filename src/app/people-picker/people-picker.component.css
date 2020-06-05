@@ -1,0 +1,70 @@
+.alignUsers{
+    position: absolute;
+    z-index: 1;
+}
+input.people-picker{
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-bottom: 1px solid royalblue;
+}
+li.list-group-item {
+    border-radius: 0 !important;
+    border-bottom: 1px solid #0B8261;
+    padding: 5px !important;
+    cursor: pointer;
+    background-color: #289781;
+    color: #fff;
+  }
+ 
+li.list-group-item:hover {
+    border-color: #0B8261;
+    background-color: #0B8261;    
+ }
+  
+  .list-group {
+    margin-bottom: 2px !important;
+  }
+  
+  .alignUsers {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }  
+  .chip-group{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    /* white-space:nowrap ; */
+  }
+ 
+  .chip-group .chip-group-item {
+    display: inline-block;
+    background: #0B8261;
+    color: white;
+    padding: 3px 5px 3px 10px;
+    border-radius: 15px;
+    margin-right: 5px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+  }
+ 
+  .chip-group .chip-group-item a {
+    color: #666;
+    text-decoration: none;
+    margin-left: 5px;
+    font-size: 10px;
+    background: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+ 
+  .chip-group .chip-group-item a:hover {
+    color: black;
+  } 

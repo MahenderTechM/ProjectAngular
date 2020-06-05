@@ -1,0 +1,65 @@
+<div class="row no-margin">
+    <div class="col-xs-12 no-padding">
+        </div>
+        <div class="col-xs-12 no-padding cvdp3_tabs">
+        
+          <ul class="nav nav-tabs">
+            <li  [ngClass]="{ 'active':activeTab==='all'}" (click)="changeTab('all')"><a data-toggle="tab" href="#AllProjects">All</a></li>
+            <li  [ngClass]="{ 'active':activeTab==='New Request'}" (click)="changeTab('New Request')"><a data-toggle="tab" href="#NewProject">NEW PROJECT</a></li>
+            <li  [ngClass]="{ 'active':activeTab==='Active'}"(click)="changeTab('Active')"><a data-toggle="tab" href="#ACL">ACTIVE</a></li>
+            <li  [ngClass]="{ 'active':activeTab==='Hold'}" (click)="changeTab('Hold')"><a data-toggle="tab" href="#BCL">HOLD</a></li>
+            <li  [ngClass]="{ 'active':activeTab==='Closed'}" (click)="changeTab('Closed')"><a data-toggle="tab" href="#Closed">CLOSED</a></li>
+            <li  [ngClass]="{ 'active':activeTab==='Archive'}" (click)="changeTab('Archive')"><a data-toggle="tab" href="#Archive">ARCHIVE</a></li>
+            <li>
+              <div >
+                  <!-- class="search_control_links" <input type="text" class="search_box"  value="Search..." onblur="if(value=='') value = 'Search...'" onfocus="if(value=='Search...') value = ''"><img src="./assets/images/icon-search15.png" class="search_img" title="Search"> -->
+                  <input class="search" type="text" name="searchString" placeholder="search..." [(ngModel)]="searchString"
+            (keyup.enter)="onFilterTextBoxChanged()">
+            <button type="button" class="download-btn float-left" (click)="onFilterTextBoxChanged()"><span
+              class="fa fa-search"></span>Search</button>
+              </div>
+            </li>
+            <li>
+            </li>
+            <li style="margin-left: 35%">
+            <div class="actionIcons">
+            <a id="sorticon" href="#"><img src="./assets/images/icon-sort.png" width="40" height="33" alt="Set Priority" data-toggle="modal" data-target="#sort" class="cursor_pointer"></a>
+            <a href="#"><img src="./assets/images/icon-chart.png" width="40" height="33" alt="Dashboard"></a>
+            <a href="#"><img src="./assets/images/icon-xls.png" width="40" height="33" alt="Export to Excel"></a>
+            <a href="#"><img src="./assets/images/icon-save.png" width="40" height="33" alt="Save"></a>
+            </div>
+            </li>
+            <li class="pull-right">
+             <div class="filterBox">
+                  <select id="view" name="view" class="" style="">
+                  <option value="">Finance</option>
+                  <option value="">Select...</option>
+                  <option value="">Select...</option>
+                  </select>
+              </div>
+            </li>
+          </ul> 
+        </div>
+
+          <ag-grid-angular
+          style="width: 100%; height: 85vh;"
+          class="ag-theme-balham"
+          [gridOptions]="gridOptions"
+          [modules]="modules"
+          [columnDefs]="columnDefs"
+          [rowData]="rowData"
+          [dateComponent]="'dateComponent'"
+          [pagination]="true"
+          [paginationPageSize]="17"
+          [floatingFilter]="true"
+          (cellClicked)="onCellClicked($event)"
+          (cellValueChanged)="onCellValueChanged($event)"
+          [columnDefs]="columnDefs"
+          [sideBar]="sideBar"
+          [getRowHeight]="getRowHeight"
+          (gridReady)="onGridReady($event)"
+          [defaultColDef]="defaultColDef"
+          (firstDataRendered)="onFirstDataRendered($event)"
+          (cellEditingStopped)=onCellValueEditStoped($event)
+          >
+      </ag-grid-angular>

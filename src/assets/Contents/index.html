@@ -1,0 +1,243 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Dashboard - CVDP3</title>
+		<link href="css/bootstrap.css" rel="stylesheet"/>
+		<link href="css/cvdp3.css" rel="stylesheet"/>
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<style>
+			.header{
+				background: url('images/back-wafer.jpg');
+				min-height:200px;
+				position: relative;
+				margin-bottom: 15px;
+				box-shadow: 0px .5px 15px #333;
+			
+			}
+			
+	.headerUnder {
+		width: 80%;
+		height: 15px; 
+		position: absolute;
+		bottom:  -15px;
+		left: 0px;
+	}
+			.welcome-text{
+				color:white;
+				font-size: 45px;
+				position:absolute;
+				bottom:0;
+				left:0;
+				padding: 0px 0px 5px 6%;
+				margin:0px;
+				background:#4d85a488;
+				width:94%;
+				text-transform: uppercase;
+			}
+			.content{
+				margin-top:20px;
+			}
+			.box{
+				padding:15px 20px;
+				margin-bottom:10px;
+			}
+
+			.box-sm{
+				height:200px;
+			}
+
+			.box-lg{
+				height:410px;
+			}
+			.box-green{
+				background-color: #96ca50;
+			}
+			
+			.box-orange{
+				background-color: #e87722;
+			}
+			.box-dark{
+				background-color: #6d6e71;
+			}
+			.box .title{
+				color:white;
+				font-size:20px;
+				margin: 0px;
+			}
+			.box-btn{
+				background-color:#16c0e8;
+				display: inline-block;
+				color:white;
+				border:none;
+				padding:12px 28px;
+				margin: 0px;
+				box-shadow: 2px 2.5px 5px #444;
+				margin-top: 5px;
+				border-radius: 3px;
+				text-decoration: none;
+			}
+				.box-btn:hover{
+					opacity: .9;
+				box-shadow: 1px .5px 1px #444;
+				}
+
+			.box .box-lst{
+				color: #ffffffcc;
+				padding-left: 15px;
+    			margin-top: 19px;
+			}
+
+	
+			.box .box-lst li{
+				margin-bottom:10px;
+			}
+
+			.box  .st-no{			
+				list-style: none;
+				padding: 0px;
+			}
+
+			.db-panel{
+				border-color:#4e9fba; 
+				border-radius: 0px;
+				height:410px;
+			}
+			.db-panel .panel-heading{
+				margin:0px;
+				color:white;
+				font-size: x-large;
+				background-color:#4e9fba; 
+			}
+
+			.pie-chart-container{
+				width:100%;
+			}
+
+		/*	.pie-chart{
+				width:250px;
+				height: 250px;
+				display: inline-block;
+			}*/
+
+.white-links A {
+color: #ffffff;	
+text-decoration: none;
+}
+.white-links A:hover {
+opacity:.8;
+text-decoration: underline
+}
+
+.max100 {
+max-width: 100%;	
+}
+
+@media (max-width: 1260px) {
+.container {
+    width: 100% !important;
+}
+}
+	
+		</style>
+	</head>
+	<body>  
+  		<div class="container-fluid no-padding"> 
+			<!-- Main Body -->
+			<div class="row no-margin topMenuBar no-padding" style="background-image:none">
+				<div class="col-sm-6">
+					<span class="logo"><img src="images/amat-logo-white.png" width="96" height="47" alt="Applied Materials"></span>
+					<span class="subLogo"><img src="images/amat-ald.png" width="12" height="47" alt="ALD"><img src="images/amat-p3.png" width="51"  height="47" alt="P3"></span>
+					<!-- <span class="pageTitle">Prioritization</span> -->
+				</div>
+				<div class="col-sm-6 text-right">
+					 <ul class="nav navbar-nav">
+            <li><a href="newProject.html">New Project</a></li>
+            <li><a href="prioritization.html">Prioritization</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="comments.html">Post Comments</a></li>
+                <li><a href="projectActions.html">Project Actions</a></li>
+              </ul>
+            </li>
+             <li><a href="adminSupport.html">Admin Support</a></li>
+          </ul> 
+				</div>
+			</div><!-- end nav row-->
+            
+            
+            
+            
+            
+            
+          
+			<div class="row no-margin">
+				<div class="col-xs-12 no-padding header" style="z-index: 1">
+					<p class="welcome-text">Welcome to CVDP3</p>
+                    
+                    <div class="box-orange headerUnder">
+					&nbsp;
+				</div>
+				</div>
+				
+				<div class="col-xs-12 content  no-padding">
+					<div class="container  no-padding">
+						<div class="col-sm-3">
+							<div class="box box-lg box-dark">
+								<p class="title">CURRENT PRIORITATION</p>
+								<p><a href="prioritization.html" class="box-btn">VIEW PRIORITATION  > </a></p>
+								<ol class="box-lst white-links" type="1">
+									<li><a href="prioritization.html">Next Gen Carbon</a></li>
+									<li><a href="prioritization.html">Precision UX Kodiak</a></li>
+									<li><a href="prioritization.html">Paragon RPS KF250</a></li>
+									<li><a href="prioritization.html">Bonded CIP-1, maraton</a></li>
+									<li><a href="prioritization.html">L-motion S/V Blocked by</a></li>
+									<li><a href="prioritization.html">NExt Gen Carbon</a></li>
+									<li><a href="prioritization.html">Precision UX Kodiak</a></li>
+									<li><a href="prioritization.html">Paragon RPS KF250</a></li>
+									<li><a href="prioritization.html">Bonded CIP-1, maraton</a></li>
+									<li><a href="prioritization.html">L-motion S/V Blocked by</a></li>
+								</ol>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="box box-sm box-green">
+								<p class="title">NEW REQUEST</p>
+								<p><a href="newProject.html" class="box-btn">NEW PROJECTS  > </a></p>
+							</div>
+							<div class="box box-sm box-orange">
+								<p class="title">QUICK LINKS</p>
+								<!-- <br> -->
+								<ul class="box-lst st-no white-links">
+									<li><a href="#">Site Owner</a></li>
+									<li><a href="#">Site Purpose & How To's</a></li>
+									<li><a href="#">Questions and Feedback</a></li>
+									<li><a href="#">Tool Support/GIS</a></li>
+								</ul>
+							</div>
+						</div>
+						
+						<div class="col-sm-6">
+							<div class="panel panel-default db-panel">
+								<div class="panel-heading">DASHBOARD ANALYTICS</div>
+								<div class="panel-body">
+									<p><b>Project Status</b></p>
+									<div class="pie-chart-container text-center">
+										
+											<img src="images/pie-graph.png" class="max100">
+										
+									</div>
+								</div>
+							  </div>
+						</div>
+					</div>
+				</div>
+      		</div>
+    		<!-- end main page HTML -->
+		</div>
+	</body>
+</html>

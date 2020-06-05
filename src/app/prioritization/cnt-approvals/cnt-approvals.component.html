@@ -1,0 +1,74 @@
+<ng-template #actionItemModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">CTN Approvals</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  <div class="modal-body">
+      <div class="project-color mb-2">Project Name: {{projectName}}</div>
+      <ag-grid-angular
+      #adminGrid
+      style="width: 100%; height: 30vh;"
+      class="ag-theme-balham"
+      [rowData]="rowData"
+      [modules]="modules"
+      [columnDefs]="columnDefs"
+      (cellValueChanged)="onCellValueChanged($event)"
+      [modules]="modules"
+      (gridReady)="onGridReady($event)"
+      [animateRows]="true"
+      [rowSelection]="rowSelection"
+      >
+     </ag-grid-angular>
+  <div class="mt-2">
+    <form>
+      <div class="form-row">
+        <div class="form-group col-md-3">
+            <label for="actionStatus">CTN Initial Decision/Revision</label>
+            <select id="actionStatus" class="form-control" [ngModel]="inpActionStatus">
+              <option selected>--Select--</option>
+              <option>Approved</option>
+              <option>Approved with contigencies</option>
+              <option>Rejected</option>
+              <option>Rework</option>
+            </select>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="comments">CTN Initial Decision/Revision Summary</label>
+            <textarea style="height: 38px;" class="form-control" id="comments"></textarea>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="ctnApprovers">CTN Approvers</label>
+            <app-people-picker (selectedUsers)="onSelectedUsers($event)" [pickerType]="pickerType"
+            (filterText)="findUsers($event,'salesGroup')" [filteredUserList]="m_filteredOwnerList" 
+            [bindSelectedUsers]="m_bindOwnerList">
+          </app-people-picker>
+          </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-3">
+          <label for="expectedDate">CTN Initial Decision/Revision Date</label>
+          <div class="input-group">
+            <input class="form-control" placeholder="MM-DD-yyyy"
+                   name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="comments">Upload/View CTN Approvals Deck</label>
+          <div class="image">
+            <a href=""><img  src="./assets/images/sitemap.png" width="20" height="20"></a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-info" (click)="saveProjectDescription(projectDescription);modal.close()">Save</button>
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>

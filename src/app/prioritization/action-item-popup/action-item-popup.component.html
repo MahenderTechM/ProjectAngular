@@ -1,0 +1,96 @@
+<ng-template #actionItemModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Action Items</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  <div class="modal-body">
+      <div class="project-color mb-2">Project Name: {{projectName}}</div>
+      <ag-grid-angular
+      #adminGrid
+      style="width: 98%; height: 30vh;"
+      class="ag-theme-balham"
+      [rowData]="rowData"
+      [modules]="modules"
+      [columnDefs]="columnDefs"
+      (cellValueChanged)="onCellValueChanged($event)"
+      [modules]="modules"
+      (gridReady)="onGridReady($event)"
+      [animateRows]="true"
+      [rowSelection]="rowSelection"
+      >
+     </ag-grid-angular>
+  <div class="mt-2">
+    <form>
+      <div class="form-row">
+        <div class="form-group col-md-3">
+          <label for="actionItem">Action Item</label>
+          <textarea style="height: 38px;"class="form-control" id="actionItem"></textarea>
+        </div>
+        <div class="form-group col-md-3">
+          <label for="actionOwner">Action Owner</label>
+          <!-- <input type="text" class="form-control" id="actionOwner" [(ngModel)]="actionItem.ActionOwner"> -->
+          <app-people-picker (selectedUsers)="onSelectedUsers($event)" [pickerType]="pickerType"
+          (filterText)="findUsers($event,'salesGroup')" [filteredUserList]="m_filteredOwnerList" 
+          [bindSelectedUsers]="m_bindOwnerList">
+        </app-people-picker>
+        </div>
+        <!-- <div class="form-group col-md-3">
+          <label for="priority">Priority</label>
+          <select id="priority" class="form-control" >
+            <option selected>--Select--</option>
+            <option>High</option>
+            <option>Low</option>
+            <option>Medium</option>
+          </select>
+        </div> -->
+        <div class="form-group col-md-3">
+          <label for="actionStatus">Action Status</label>
+          <select id="actionStatus" class="form-control" [ngModel]="inpActionStatus">
+            <option selected>--Select--</option>
+            <option>Open</option>
+            <option>Closed</option>
+            <option>Cancelled</option>
+            <option>In Progress</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <!-- <div class="form-group col-md-4">
+          <label for="expectedDate">Expected Completion Date</label>
+          <input type="text" class="form-control" id="expectedDate">
+        </div> -->
+        <div class="form-group col-md-3">
+          <label for="expectedDate">Due Date</label>
+          <div class="input-group">
+            <input class="form-control" placeholder="MM-DD-yyyy"
+                   name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="form-group col-md-4">
+          <label for="deviceType">Device Type</label>
+            <select id="deviceType" class="form-control">
+              <option selected>--Select--</option>
+              <option>MTX</option>
+              <option>DRAM</option>
+              <option>EM</option>
+              <option>RGNAND</option>
+            </select>
+        </div> -->
+        <div class="form-group col-md-4">
+          <label for="comments">Comments</label>
+          <textarea style="height: 38px;" class="form-control" id="comments"></textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-info" (click)="saveProjectDescription(projectDescription);modal.close()">Save</button>
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
